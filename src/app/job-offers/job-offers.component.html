@@ -1,0 +1,6 @@
+<div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="10px">
+  <job-offer-detail *ngFor="let offer of jobOffers$ | async" [jobOffer]="offer"></job-offer-detail>
+</div>
+<button mat-fab aria-label="Add job offer" class="add-button" (click)="addJobOffer()">
+  <mat-icon>add</mat-icon>
+</button>
