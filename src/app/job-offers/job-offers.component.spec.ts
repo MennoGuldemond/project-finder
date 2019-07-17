@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { JobOffersComponent } from './job-offers.component';
+import { SharedModule } from '../shared.module';
+import { JobOfferDetailComponent } from './components';
 
 describe('JobOffersComponent', () => {
   let component: JobOffersComponent;
@@ -8,9 +10,13 @@ describe('JobOffersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ JobOffersComponent ]
+      imports: [SharedModule],
+      declarations: [
+        JobOffersComponent,
+        JobOfferDetailComponent
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

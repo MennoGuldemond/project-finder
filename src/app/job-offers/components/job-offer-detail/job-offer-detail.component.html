@@ -1,15 +1,15 @@
 <mat-card class="job-offer-card">
   <mat-card-header>
-    <mat-card-title>{{ jobOffer.title }}</mat-card-title>
+    <mat-card-title>{{ jobOffer?.title }}</mat-card-title>
     <button mat-mini-fab aria-label="Edit job offer" class="edit-button" (click)="editJobOffer()">
       <mat-icon>edit</mat-icon>
     </button>
-    <mat-card-subtitle>{{ jobOffer.link }}</mat-card-subtitle>
+    <mat-card-subtitle>{{ jobOffer?.link }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <p>{{ jobOffer.description }}</p>
+    <p>{{ jobOffer?.description }}</p>
     <mat-chip-list aria-label="Job offer tags">
-      <mat-chip *ngFor="let tag of jobOffer.tags" color="accent" selected>{{ tag }}</mat-chip>
+      <mat-chip *ngFor="let tag of jobOffer?.tags" color="accent" selected>{{ tag }}</mat-chip>
     </mat-chip-list>
   </mat-card-content>
   <mat-card-actions>

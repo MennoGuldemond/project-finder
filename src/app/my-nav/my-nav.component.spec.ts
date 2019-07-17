@@ -1,15 +1,9 @@
 import { LayoutModule } from '@angular/cdk/layout';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MatButtonModule,
-  MatIconModule,
-  MatListModule,
-  MatSidenavModule,
-  MatToolbarModule,
-} from '@angular/material';
 
 import { MyNavComponent } from './my-nav.component';
+import { SharedModule } from '../shared.module';
 
 describe('MyNavComponent', () => {
   let component: MyNavComponent;
@@ -17,15 +11,13 @@ describe('MyNavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MyNavComponent],
+      declarations: [
+        MyNavComponent
+      ],
       imports: [
         NoopAnimationsModule,
         LayoutModule,
-        MatButtonModule,
-        MatIconModule,
-        MatListModule,
-        MatSidenavModule,
-        MatToolbarModule,
+        SharedModule
       ]
     }).compileComponents();
   }));

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { JobOfferDetailComponent } from './job-offer-detail.component';
+import { SharedModule } from 'src/app/shared.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 describe('JobOfferDetailComponent', () => {
   let component: JobOfferDetailComponent;
@@ -8,9 +10,13 @@ describe('JobOfferDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ JobOfferDetailComponent ]
+      imports: [
+        SharedModule,
+        AppRoutingModule
+      ],
+      declarations: [JobOfferDetailComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
