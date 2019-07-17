@@ -11,8 +11,7 @@ describe('JobOfferDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        SharedModule,
-        AppRoutingModule
+        SharedModule
       ],
       declarations: [JobOfferDetailComponent]
     })
