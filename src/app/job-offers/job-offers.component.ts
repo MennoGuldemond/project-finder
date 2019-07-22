@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-
-import { JobOfferHttpService } from './services';
-import { IJobOffer } from './models';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { IJobOffer } from './models';
+
+import { getJobOffers } from '../store/actions/job-offer.actions';
+import { State } from '../store/reducers';
 
 @Component({
   selector: 'app-job-offers',
@@ -14,10 +18,14 @@ export class JobOffersComponent implements OnInit {
 
   jobOffers$: Observable<IJobOffer[]>;
 
-  constructor(private jobOfferService: JobOfferHttpService, private router: Router) { }
+  constructor(private store: Store<State>, private router: Router) { }
 
   ngOnInit() {
-    this.jobOffers$ = this.jobOfferService.getAll();
+    this.store.dispatch(getJobOffers());
+    
+    this.jobOffers$ = this.store.pipe(
+      map(state => state.jobOffers.offers)
+    );
   }
 
   addJobOffer(): void {
