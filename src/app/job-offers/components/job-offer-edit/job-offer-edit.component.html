@@ -24,10 +24,8 @@
     </mat-form-field>
 
     <div fxFlex fxLayout="row" fxLayoutGap="100px">
-      <button fxFlex *ngIf="(jobOffer._id && jobOffer._id != '')" mat-raised-button (click)="delete()">Delete</button>
       <button fxFlex mat-raised-button color="primary" (click)="save()" [disabled]="jobOfferForm.valid === false">Save</button>
     </div>
   </form>
 
 </div>
-<!-- <pre>{{ jobOffer | json }}</pre> -->

@@ -10,9 +10,9 @@ describe('JobOfferEditComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [SharedModule],
-      declarations: [ JobOfferEditComponent ]
+      declarations: [JobOfferEditComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

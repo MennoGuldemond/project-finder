@@ -2,7 +2,6 @@ import { Action, createReducer, on } from '@ngrx/store'
 import * as JobOfferActions from '../actions/job-offer.actions';
 
 import { IJobOffer } from '../../job-offers/models';
-import * as fromRoot from './index';
 
 export interface JobOfferState {
   offers: IJobOffer[];
@@ -15,8 +14,15 @@ const initialState: JobOfferState = {
 const jobOfferReducer = createReducer(
   initialState,
   on(JobOfferActions.getJobOffers, (state) => ({ ...state })),
-  on(JobOfferActions.saveJobOffers, (state, x: any) => {
-    return ({ ...state, offers: x.payload })
+  on(JobOfferActions.setJobOffers, (state, action: any) => {
+    return ({ ...state, offers: action.payload })
+  }),
+  on(JobOfferActions.deleteJobOffer, (state, action: any) => {
+    return ({
+      ...state, offers: state.offers.filter((offer: IJobOffer) => {
+        return offer._id !== action.id;
+      })
+    })
   })
 );
 

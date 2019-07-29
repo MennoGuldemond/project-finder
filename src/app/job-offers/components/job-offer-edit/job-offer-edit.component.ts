@@ -61,14 +61,6 @@ export class JobOfferEditComponent implements OnInit {
       });
     }
   }
-  
-  delete(): void {
-    if (this.jobOffer._id) {
-      this.jobOfferService.delete(this.jobOffer).subscribe(x => {
-        this.router.navigate(['/joboffers']);
-      });
-    }
-  }
 
   removeTag(index: number): void {
     this.jobOffer.tags.splice(index, 1);

@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { MaterialModule } from './material.module'; 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,7 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
     ReactiveFormsModule,
     MaterialModule,
     FlexLayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatMenuModule
   ]
 })
 export class SharedModule { }

@@ -29,9 +29,10 @@ export class JobOfferHttpService {
     return this.http.patch<IJobOffer>(`${this.baseUrl}/jobOffer/${jobOffer._id}`, jobOffer);
   }
 
-  delete(jobOffer: IJobOffer): Observable<void> {
-    return this.http.delete(`${this.baseUrl}/joboffer/${jobOffer._id}`).pipe(map(x => {
-      return;
+  delete(id: string): Observable<void> {
+    console.log(id);
+    return this.http.delete(`${this.baseUrl}/joboffer/${id}`).pipe(map(x => {
+      return null;
     }));
   }
 
